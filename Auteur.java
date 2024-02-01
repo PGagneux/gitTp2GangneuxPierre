@@ -64,6 +64,12 @@ public class Auteur{
     public Integer qualiteStyle(Style s){
         return perfs.get(s).getQualite();
     }
+
+    public String citationStyle(Style s){
+        return perfs.get(s).getCitation();
+    }
+
+
     
     @Override
     public String toString(){
