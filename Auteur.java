@@ -12,9 +12,6 @@ public class Auteur{
         this.perfs.put("Tragedie", new Performance(citationTragedie, qualiteTragedie ));
         this.perfs.put("Drame", new Performance(citationDrame, qualiteTragedie));
         this.perfs.put("Comedie", new Performance(citationComedie, qualiteComedie));
-
-      
-
     }
 
     public Integer getQualiteTragedie(){
