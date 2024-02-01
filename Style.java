@@ -5,12 +5,12 @@ public enum Style {
 
     public String toString() {
 	if (this == COMÉDIE)
-	    return "Comédie";
+	    return "COMEDIE";
 	else if (this == TRAGÉDIE)
-	    return "Tragédie";
+	    return "TRAGEDIE";
 	else {
 	    assert this == DRAME;
-	    return "Drame";
+	    return "DRAME";
 	}
     }
 }
