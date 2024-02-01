@@ -6,12 +6,12 @@ public class Auteur{
     private Map <String, Performance> perfs;
     
 
-    public Auteur(String nom){
+    public Auteur(String nom, Integer qualiteTragedie, String citationTragedie, Integer qualiteComedie, String citationComedie, Integer qualiteDrame, String citationDrame){
         this.nom = nom;
         this.perfs = new HashMap<>();
-        this.perfs.put("Tragedie", new Performance("citatoin", 100));
-        this.perfs.put("Drame", new Performance("citatoin", 100));
-        this.perfs.put("Comedie", new Performance("citatoin", 100));
+        this.perfs.put("Tragedie", new Performance(citationTragedie, qualiteTragedie ));
+        this.perfs.put("Drame", new Performance(citationDrame, qualiteTragedie));
+        this.perfs.put("Comedie", new Performance(citationComedie, qualiteComedie));
 
       
 
@@ -20,6 +20,12 @@ public class Auteur{
     public Integer getQualiteTragedie(){
         return this.perfs.get("Tragedie").getQualite();
     }
+
+
+    public String getCitationTragedie(){
+        return this.perfs.get("Tragedie").getCitation();
+    }
+
 
     @Override
     public String toString(){
