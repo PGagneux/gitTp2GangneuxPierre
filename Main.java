@@ -1,3 +1,5 @@
+import dionysies.Tournoi;
+
 class Main {
   public static void main(String[] args) {
     String citation_antigone =
@@ -84,5 +86,26 @@ class Main {
     assert jour1.scoreTotal(aristophane,spec,spec,spec) == aristophane.getQualiteDrame()*2 + aristophane.getQualiteTragedie()*2 + aristophane.getQualiteComedie()*2;
     spec = 0;
     assert jour1.scoreTotal(aristophane,spec,spec,spec) == 0;
+
+
+    // Simulation Journee
+
+    Journee jour2 = new Journee(Style.COMÉDIE, Style.DRAME, Style.TRAGÉDIE);
+    int scoreAristophane = jour2.scoreTotal(aristophane, 2, 5, 6);
+    int scoreEuripide = jour2.scoreTotal(euripide, 5, 4, 3);
+    if (scoreAristophane > scoreEuripide)
+        System.out.println(" le gagnant est aristophane");
+    else
+        System.out.println(" le gagnant est euripide");
+
+
+
+    // tournoi
+
+    Tournoi tournoi = new Tournoi("tournoi");
+    tournoi.inscrire(euripide);
+    tournoi.inscrire(aristophane);
+    tournoi.inscrire(sophocle);
+
   }
 }
