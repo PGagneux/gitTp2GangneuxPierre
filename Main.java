@@ -73,5 +73,16 @@ class Main {
 
     assert aristophane.getCitationTragedie() == citation_thesmophories;
     assert aristophane.getQualiteTragedie() == 5;
+
+    // tests journée
+
+    int spec = 1;
+    Journee jour1 = new Journee(Style.COMÉDIE, Style.DRAME, Style.TRAGÉDIE);
+    //Auteur auteur, int nbSpecM, int nbSpecAM, int nbSpecS 
+    assert jour1.scoreTotal(aristophane,spec,spec,spec) == aristophane.getQualiteDrame() + aristophane.getQualiteTragedie() + aristophane.getQualiteComedie();
+    spec = 2;
+    assert jour1.scoreTotal(aristophane,spec,spec,spec) == aristophane.getQualiteDrame()*2 + aristophane.getQualiteTragedie()*2 + aristophane.getQualiteComedie()*2;
+    spec = 0;
+    assert jour1.scoreTotal(aristophane,spec,spec,spec) == 0;
   }
 }
