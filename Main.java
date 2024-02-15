@@ -1,7 +1,8 @@
 import dionysies.Tournoi;
 
 class Main {
-  public static void main(String[] args) {
+  @SuppressWarnings("unchecked")
+public static void main(String[] args) {
     String citation_antigone =
         "C'est ainsi que j'irai reposer près de lui, chère à qui m'est cher, saintement"
             + " criminelle.";
@@ -102,10 +103,20 @@ class Main {
 
     // tournoi
 
+    @SuppressWarnings("rawtypes")
     Tournoi tournoi = new Tournoi("tournoi");
     tournoi.inscrire(euripide);
     tournoi.inscrire(aristophane);
     tournoi.inscrire(sophocle);
+    tournoi.débute();
+    System.out.println(tournoi.participantAProchaineJournée());//16
+    System.out.println(tournoi.participantBProchaineJournée()); 
+    //17
+
+    tournoi.enregistreRésultatJournée(true);
+    tournoi.afficheParticipants();
+
+    
 
   }
 }
