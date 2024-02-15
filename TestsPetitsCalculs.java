@@ -2,6 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
 public class TestsPetitsCalculs{
     @Test
     public void testAddition() {
@@ -37,6 +38,18 @@ public class TestsPetitsCalculs{
     public void testInverseMot(){
         assertNotEquals(inverseMot("abc"), "ab");
         assertEquals(inverseMot("abc"), "cba");
+    }
+
+    public boolean palindrome(String mot){
+        String inverse = inverseMot(mot);
+        return inverse.equals(mot);
+    }
+
+    @Test
+    public void testPalindrome(){
+        assertTrue(palindrome("aba"));
+        assertFalse(palindrome("bbc"));
+        assertTrue(palindrome("a"));
     }
 
 
